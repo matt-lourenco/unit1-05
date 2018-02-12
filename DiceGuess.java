@@ -24,17 +24,20 @@ public class DiceGuess {
 				(System.in));
 		
 		System.out.println("Guess the number that was rolled on the dice:");
-		try {
-			//Get user input
-			input = reader.readLine();
-		} catch (IOException noInput) {
-			noInput.printStackTrace();
-		}
-		try {
-			//Convert string to integer
-			guess = Integer.parseInt(input);
-		} catch (NumberFormatException stringInput) {
-			System.out.println("Please enter an integer");
+		while(true) {
+			try {
+				//Get user input
+				input = reader.readLine();
+			} catch (IOException noInput) {
+				noInput.printStackTrace();
+			}
+			try {
+				//Convert string to integer
+				guess = Integer.parseInt(input);
+				break;
+			} catch (NumberFormatException stringInput) {
+				System.out.println("Please enter an integer");
+			}
 		}
 		
 		Random rand = new Random();
